@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFFCFE30C718AB1C87E646A4 /* Pods_ICUdep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EA29525A00E1E634CA8F0D /* Pods_ICUdep.framework */; };
 		D924B7552597FDF000EF9805 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D924B7542597FDF000EF9805 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		50EA29525A00E1E634CA8F0D /* Pods_ICUdep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICUdep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84ECCA545F47E9B5E566C73E /* Pods-ICUdep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICUdep.release.xcconfig"; path = "Target Support Files/Pods-ICUdep/Pods-ICUdep.release.xcconfig"; sourceTree = "<group>"; };
+		C225F334FF53A7ACAA903286 /* Pods-ICUdep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICUdep.debug.xcconfig"; path = "Target Support Files/Pods-ICUdep/Pods-ICUdep.debug.xcconfig"; sourceTree = "<group>"; };
 		D924B7512597FDF000EF9805 /* ICUdep */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ICUdep; sourceTree = BUILT_PRODUCTS_DIR; };
 		D924B7542597FDF000EF9805 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,17 +36,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFCFE30C718AB1C87E646A4 /* Pods_ICUdep.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF8FE1047BF9641BD6DD8022 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50EA29525A00E1E634CA8F0D /* Pods_ICUdep.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEE64BF20C2A97219EF3635B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C225F334FF53A7ACAA903286 /* Pods-ICUdep.debug.xcconfig */,
+				84ECCA545F47E9B5E566C73E /* Pods-ICUdep.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D924B7482597FDF000EF9805 = {
 			isa = PBXGroup;
 			children = (
 				D924B7532597FDF000EF9805 /* ICUdep */,
 				D924B7522597FDF000EF9805 /* Products */,
+				CEE64BF20C2A97219EF3635B /* Pods */,
+				AF8FE1047BF9641BD6DD8022 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +94,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D924B7582597FDF000EF9805 /* Build configuration list for PBXNativeTarget "ICUdep" */;
 			buildPhases = (
+				7FFFC9ED3CD6D9A2C4172AEA /* [CP] Check Pods Manifest.lock */,
 				D924B74D2597FDF000EF9805 /* Sources */,
 				D924B74E2597FDF000EF9805 /* Frameworks */,
 				D924B74F2597FDF000EF9805 /* CopyFiles */,
@@ -112,6 +138,31 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7FFFC9ED3CD6D9A2C4172AEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ICUdep-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D924B74D2597FDF000EF9805 /* Sources */ = {
@@ -238,6 +289,7 @@
 		};
 		D924B7592597FDF000EF9805 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C225F334FF53A7ACAA903286 /* Pods-ICUdep.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T55QU8PK;
@@ -248,6 +300,7 @@
 		};
 		D924B75A2597FDF000EF9805 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84ECCA545F47E9B5E566C73E /* Pods-ICUdep.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57T55QU8PK;
