@@ -76,7 +76,7 @@ fi
 patch tools/build/src/build/configure.jam $SCRIPT_DIR/configure.jam.patch
 
 LIBS_TO_BUILD="--with-locale"
-LIBS_TO_BUILD="--with-thread --with-filesystem --with-program_options --with-system --with-date_time"
+LIBS_TO_BUILD="--with-thread --with-filesystem --with-program_options --with-system --with-date_time --with-iostreams --with-locale --with-log"
 CPPFLAGS="-DBOOST_AC_USE_PTHREADS -DBOOST_SP_USE_PTHREADS -std=gnu++98 -stdlib=libc++ -fembed-bitcode"
 
 B2_BUILD_OPTIONS="release link=static runtime-link=shared define=BOOST_SPIRIT_THREADSAFE"
@@ -158,10 +158,10 @@ build_xcframework boost_date_time
 # build_xcframework boost_fiber
 build_xcframework boost_filesystem
 # build_xcframework boost_graph
-# build_xcframework boost_iostreams
+build_xcframework boost_iostreams
 # build_xcframework boost_json
-# build_xcframework boost_locale
-# build_xcframework boost_log
+build_xcframework boost_locale
+build_xcframework boost_log
 # build_xcframework boost_log_setup
 # build_xcframework boost_math_c99
 # build_xcframework boost_math_c99l
